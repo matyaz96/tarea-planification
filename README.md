@@ -1,2 +1,1 @@
-# tarea-planification
-tarea
+# planification
