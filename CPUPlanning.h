@@ -11,7 +11,7 @@
 #include <sstream>
 #include <vector>
 #include <map>
-#include <queue>
+#include <deque>
 
 using namespace std;
 
@@ -19,6 +19,8 @@ struct Process {
     int id;
     int runtime;
     int arrival;
+    int running;
+    int waiting;
 };
 
 class CPUPlanning {
