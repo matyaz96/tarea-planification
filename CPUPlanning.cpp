@@ -146,8 +146,20 @@ void CPUPlanning::run_sjf() {
 
         // Set current process
         if(current_process.id == -1) {
-            current_process = active_processes.front();
-            active_processes.pop_front();
+            int min_running=1000;
+            int min_id=-1;
+            for(int i=0; i<active_processes.size();i++) {
+                active_processes[i].running;
+                if(min_running>active_processes[i].runtime){
+                    min_running=active_processes[i].runtime;
+                    min_id=i;
+                }
+
+
+            }
+
+            current_process = active_processes[min_id];
+            active_processes.erase(active_processes.begin()+min_id);
         }
 
         // Run the current process
